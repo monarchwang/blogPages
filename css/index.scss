@@ -77,6 +77,10 @@ body {
   margin: 0;
   color: $fontColor;
   box-sizing: border-box;
+
+  overflow-x: hidden;
+  background: #F8FAFC;
+
   //滚动条
   &::-webkit-scrollbar {
     width: 5px;
@@ -211,12 +215,17 @@ body {
     flex: 1;
     justify-content: space-between;
     .content {
-      flex: 4;
+      flex: 5;
       padding: 2rem;
+
+      .article-wrap{
+
+      }
+
+
     }
     .nav, .ads {
-      flex: 1;
-      background-color: gray;
+      flex: 2;
       @include enableMobile {
         display: none;
       }

@@ -47,7 +47,9 @@
 body {
   margin: 0;
   color: #3f3f3f;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #F8FAFC; }
   body::-webkit-scrollbar {
     width: 5px;
     height: 4px;
@@ -145,11 +147,10 @@ body {
     flex: 1;
     justify-content: space-between; }
     .container .main .content {
-      flex: 4;
+      flex: 5;
       padding: 2rem; }
     .container .main .nav, .container .main .ads {
-      flex: 1;
-      background-color: gray; }
+      flex: 2; }
       @media screen and (max-width: 800px) {
         .container .main .nav, .container .main .ads {
           display: none; } }
