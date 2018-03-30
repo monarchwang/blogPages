@@ -89,11 +89,12 @@ body {
   margin: 0;
   color: $fontColor;
   box-sizing: border-box;
-
   overflow-x: hidden;
   background: #F8FAFC;
 
+
   @include enableMobile() {
+    height: 100vh;
     background-color: $white;
   }
 
@@ -227,7 +228,6 @@ body {
     justify-content: space-between;
     .content {
       flex: 4;
-
       ul {
         flex-direction: column;
         li {
@@ -329,6 +329,7 @@ body {
 
       @include enableMobile {
         /*手机端样式*/
+        flex: 1;
         box-shadow: none;
         padding: 1rem 1.5rem;
         .article-wrap {
