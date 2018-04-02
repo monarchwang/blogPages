@@ -45,6 +45,21 @@
     opacity: .3;
     transition: 0s; }
 
+span.loading {
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+  color: #5e5e5e;
+  font-size: .75rem;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center; }
+  span.loading img {
+    vertical-align: middle;
+    margin-right: 0.5rem; }
+
 body {
   margin: 0;
   color: #3f3f3f;
@@ -191,7 +206,17 @@ body {
               border-radius: 50px 50px 0;
               box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.2); }
           .container .main .content .loading-more {
-            display: none; } }
+            background-color: transparent;
+            display: block;
+            width: 8rem;
+            height: 2rem;
+            margin: 1rem auto auto;
+            border-radius: 1rem;
+            line-height: 2rem;
+            text-align: center;
+            border: 1px solid #d9dde1;
+            color: #71777d;
+            font-size: 12px; } }
       .container .main .content .list-content {
         display: flex;
         flex-direction: column;
@@ -235,7 +260,8 @@ body {
           /*手机端样式*/
           flex: 1;
           box-shadow: none;
-          padding: 1rem 1.5rem; }
+          padding: 1rem 1.5rem;
+          position: relative; }
           .container .main .content .article-wrap {
             border-bottom: 1px solid #e7ecef;
             padding-top: .53333333rem;
@@ -253,24 +279,32 @@ body {
             .container .main .content .article-wrap .list-content .list-bottom {
               color: #5e5e5e; }
           .container .main .content .loading-more {
-            background-color: transparent;
-            display: block;
-            width: 8rem;
-            height: 2rem;
-            margin: 1rem auto auto;
-            border-radius: 1rem;
-            line-height: 2rem;
-            text-align: center;
-            border: 1px solid #d9dde1;
-            color: #71777d;
-            font-size: 12px; } }
+            display: none; } }
     .container .main .nav, .container .main .ads {
+      padding: 2rem 1rem 1rem 1rem;
       flex: 2; }
       @media screen and (max-width: 800px) {
         .container .main .nav, .container .main .ads {
           display: none; } }
     .container .main .nav {
       order: -1; }
+      .container .main .nav ul.nav-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end; }
+        .container .main .nav ul.nav-wrap li.nav-item {
+          max-width: 15rem;
+          box-sizing: border-box;
+          padding: 1rem;
+          cursor: pointer; }
+          .container .main .nav ul.nav-wrap li.nav-item:first-child {
+            margin-top: -.6rem; }
+          .container .main .nav ul.nav-wrap li.nav-item:hover a {
+            color: #f01414; }
+        .container .main .nav ul.nav-wrap li.active a {
+          font-weight: 700;
+          color: #F01414; }
   .container .footer {
     flex: 0 0 3rem;
     background-color: #f2f2f2; }

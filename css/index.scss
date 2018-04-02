@@ -85,6 +85,23 @@ $fontColor: #3f3f3f;
   }
 }
 
+span.loading {
+  position: absolute;
+  left: 0;
+  background-color: $white;
+  color: #5e5e5e;
+  font-size: .75rem;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+}
+
 body {
   margin: 0;
   color: $fontColor;
@@ -276,8 +293,19 @@ body {
             box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .2);
           }
         }
+
         .loading-more {
-          display: none;
+          background-color: transparent;
+          display: block;
+          width: 8rem;
+          height: 2rem;
+          margin: 1rem auto auto;
+          border-radius: 1rem;
+          line-height: 2rem;
+          text-align: center;
+          border: 1px solid #d9dde1;
+          color: #71777d;
+          font-size: 12px;
         }
       }
 
@@ -332,6 +360,7 @@ body {
         flex: 1;
         box-shadow: none;
         padding: 1rem 1.5rem;
+        position: relative;
         .article-wrap {
           border-bottom: 1px solid #e7ecef;
           padding-top: .53333333rem;
@@ -354,26 +383,16 @@ body {
             .list-bottom {
               color: #5e5e5e;
             }
-
           }
         }
         .loading-more {
-          background-color: transparent;
-          display: block;
-          width: 8rem;
-          height: 2rem;
-          margin: 1rem auto auto;
-          border-radius: 1rem;
-          line-height: 2rem;
-          text-align: center;
-          border: 1px solid #d9dde1;
-          color: #71777d;
-          font-size: 12px;
+          display: none;
         }
       }
 
     }
     .nav, .ads {
+      padding: 2rem 1rem 1rem 1rem;
       flex: 2;
       @include enableMobile {
         display: none;
@@ -381,6 +400,32 @@ body {
     }
     .nav {
       order: -1;
+      ul.nav-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        li.nav-item {
+          max-width: 15rem;
+          box-sizing: border-box;
+          padding: 1rem;
+          cursor: pointer;
+          &:first-child {
+            margin-top: -.6rem;
+          }
+          &:hover {
+            a {
+              color: #f01414;
+            }
+          }
+        }
+        li.active {
+          a{
+            font-weight: 700;
+            color: #F01414;
+          }
+        }
+      }
     }
   }
 
