@@ -109,9 +109,10 @@ body {
   position: relative; }
   .container .header {
     flex: 0 0 5rem;
-    background-color: #fff;
+    border-color: #e7e7e7;
+    background-color: #f8f8f8;
     display: flex;
-    color: #4D555D;
+    color: #777;
     border-bottom: solid 1px #e7e7e7;
     overflow: hidden;
     flex-wrap: wrap; }
@@ -131,8 +132,8 @@ body {
           padding: 2rem;
           transition: all .3s ease-in-out; }
         .container .header ul.nav-items li:hover a, .container .header ul.nav-items li.nav-item-active a {
-          color: #fff;
-          background-color: #3f3f3f; }
+          color: #555;
+          background-color: #e7e7e7; }
         .container .header ul.nav-items li:last-child {
           display: none; }
         @media screen and (max-width: 800px) {

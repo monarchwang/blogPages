@@ -170,9 +170,10 @@ body {
         margin-top: -0.8rem;
       }
     }
-    background-color: $white;
+    border-color: #e7e7e7;
+    background-color: #f8f8f8;
     display: flex;
-    color: #4D555D;
+    color: #777;
     border-bottom: solid 1px $gray3;
     overflow: hidden;
     flex-wrap: wrap;
@@ -191,8 +192,8 @@ body {
         }
         &:hover,&.nav-item-active {
           a {
-            color: $white;
-            background-color: $fontColor;
+            color: #555;
+            background-color: #e7e7e7;
           }
         }
         &:last-child {
