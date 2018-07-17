@@ -86,14 +86,17 @@ $fontColor: #3f3f3f;
 }
 
 span.loading {
-  position: absolute;
-  left: 0;
-  background-color: $white;
+  @include enableMobile() {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 999;
+    background-color: $white;
+  }
+  display: block;
+  width: 100%;
   color: #5e5e5e;
   font-size: .75rem;
-  z-index: 999;
-  bottom: 0;
-  width: 100%;
   padding: 1rem 0;
   text-align: center;
   img {
@@ -108,7 +111,6 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   background: #F8FAFC;
-
 
   @include enableMobile() {
     height: 100vh;
@@ -159,6 +161,7 @@ body {
   flex-direction: column;
   position: relative;
 
+  //头部
   .header {
     flex: 0 0 5rem;
     @include enableMobile {
@@ -186,10 +189,10 @@ body {
           padding: 2rem;
           transition: all .3s ease-in-out;
         }
-        &:hover {
+        &:hover,&.nav-item-active {
           a {
             color: $white;
-            background-color: $darkNavColor;
+            background-color: $fontColor;
           }
         }
         &:last-child {
@@ -355,8 +358,8 @@ body {
         }
       }
 
+      /*手机端样式*/
       @include enableMobile {
-        /*手机端样式*/
         flex: 1;
         box-shadow: none;
         padding: 1rem 1.5rem;
@@ -393,7 +396,7 @@ body {
     }
     .nav, .ads {
       padding: 2rem 1rem 1rem 1rem;
-      flex: 2;
+      flex: 1.8;
       @include enableMobile {
         display: none;
       }
@@ -401,26 +404,26 @@ body {
     .nav {
       order: -1;
       ul.nav-wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-end;
+        display: block;
         li.nav-item {
-          max-width: 15rem;
+          display: block;
+          text-align: right;
           box-sizing: border-box;
           padding: 1rem;
-          cursor: pointer;
           &:first-child {
             margin-top: -.6rem;
           }
-          &:hover {
-            a {
-              color: #f01414;
+
+          a{
+            display: inline-block;
+            min-width: 8rem;
+            &::hover{
+
             }
           }
         }
         li.active {
-          a{
+          a {
             font-weight: 700;
             color: #F01414;
           }
