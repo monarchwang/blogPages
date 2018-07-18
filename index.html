@@ -25,7 +25,7 @@
 		<li>
 			<button class="expand-btn ripple"><i class="fa fa-align-justify"></i></button>
 		</li>
-	</ul>
+	</ul> v
 </header>
 <ul class="nav-items-expend">
 	<li><a href="#" target="_self">免费课程</a></li>
@@ -440,13 +440,13 @@
 
 			});
 
-			$('.js-load-more').click(function () {
-				fetchMoreData()
-			});
+//			$('.js-load-more').click(function () {
+//				fetchMoreData()
+//			});
 		}
 
 
-		// 左侧导航滑动到顶部后固定住
+		// pc端页面左侧导航滑动到顶部后固定住
 		if (!isMobile) {
 			const $navWrap = $('#nav-wrap');
 			const $nav = $('nav.nav');
@@ -469,6 +469,13 @@
 						'position': 'static'
 					});
 			});
+
+			//点击左侧导航切换页面
+			$navWrap.on('click', 'li.nav-item', function () {
+				$navWrap.find('li.nav-item').removeClass('active');
+				$(this).addClass('active')
+			})
+
 
 			//TODO 设置回到顶部按钮
 
